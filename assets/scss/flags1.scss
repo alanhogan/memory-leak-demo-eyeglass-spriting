@@ -18,7 +18,7 @@ $flag-sprite-map: sprite-map('flag-sprite-map',
   .flag-#{sprite-identifier($flag-sprite-map, $flag)} {
     @extend %flag-bg;
     @include sprite-position($flag-sprite-map, $flag);
-    @include sprite-dimensions($flag-sprite-map, $flag);
+    // @include sprite-dimensions($flag-sprite-map, $flag);
     // background-color: #ADD8E6;
   }
 }

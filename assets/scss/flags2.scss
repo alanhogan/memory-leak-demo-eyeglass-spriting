@@ -2,23 +2,23 @@
 @import "assets";
 
 // flag sprites
-$flag-sprite-map: sprite-map('flag-sprite-map',
+$flag2-sprite-map: sprite-map('flag2-sprite-map',
                               sprite-layout(vertical, (spacing: 1px, alignment: left)),
                              'images/flags/*');
 
-// @debug $flag-sprite-map;
+// @debug $flag2-sprite-map;
 
 // calling sprite-background generates the sprite map image
 %flag2-bg {
-  @include sprite-background($flag-sprite-map);
+  @include sprite-background($flag2-sprite-map);
 }
 
-@each $flag in sprite-list($flag-sprite-map) {
-  // @debug sprite-identifier($flag-sprite-map, $flag);
-  .flag2-#{sprite-identifier($flag-sprite-map, $flag)} {
+@each $flag in sprite-list($flag2-sprite-map) {
+  // @debug sprite-identifier($flag2-sprite-map, $flag);
+  .flag2-#{sprite-identifier($flag2-sprite-map, $flag)} {
     @extend %flag2-bg;
-    @include sprite-position($flag-sprite-map, $flag);
-    @include sprite-dimensions($flag-sprite-map, $flag);
+    @include sprite-position($flag2-sprite-map, $flag);
+    // @include sprite-dimensions($flag2-sprite-map, $flag);
     // background-color: #ADD8E6;
   }
 }

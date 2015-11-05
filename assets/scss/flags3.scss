@@ -1,0 +1,24 @@
+@import "spriting";
+@import "assets";
+
+// flag sprites
+$flag3-sprite-map: sprite-map('flag3-sprite-map',
+                              sprite-layout(horizontal, (spacing: 1px, alignment: top)),
+                             'images/flags/*');
+
+// @debug $flag3-sprite-map;
+
+// calling sprite-background generates the sprite map image
+%flag3-bg {
+  @include sprite-background($flag3-sprite-map);
+}
+
+@each $flag in sprite-list($flag3-sprite-map) {
+  // @debug sprite-identifier($flag3-sprite-map, $flag);
+  .flag3-#{sprite-identifier($flag3-sprite-map, $flag)} {
+    @extend %flag3-bg;
+    @include sprite-position($flag3-sprite-map, $flag);
+    // @include sprite-dimensions($flag3-sprite-map, $flag);
+    // background-color: #ADD8E6;
+  }
+}

@@ -27,7 +27,7 @@ $cat-sprite-map: sprite-map('cat-sprite-map',
 
 // metro-icon sprites
 $metro-icon-sprite-map: sprite-map('metro-icon-sprite-map',
-  sprite-layout(vertical, (spacing: 50px, alignment: left)),
+  sprite-layout(vertical, (spacing: 0, alignment: left)),
   'images/dakirby309.deviantart.com-metro-light-icons/*'
 );
 
@@ -36,6 +36,8 @@ $metro-icon-sprite-map: sprite-map('metro-icon-sprite-map',
 // calling sprite-background generates the sprite map image
 %metro-icon-bg {
   @include sprite-background($metro-icon-sprite-map);
+  height: 76px;
+  width: 76px;
 }
 
 @each $metro-icon in sprite-list($metro-icon-sprite-map) {
@@ -43,7 +45,6 @@ $metro-icon-sprite-map: sprite-map('metro-icon-sprite-map',
   .metro-icon-#{sprite-identifier($metro-icon-sprite-map, $metro-icon)} {
     @extend %metro-icon-bg;
     @include sprite-position($metro-icon-sprite-map, $metro-icon);
-    @include sprite-dimensions($metro-icon-sprite-map, $metro-icon);
     // background-color: #ADD8E6;
   }
 }
