@@ -1,0 +1,49 @@
+@import "spriting";
+@import "assets";
+
+// cat sprites
+$cat-sprite-map: sprite-map('cat-sprite-map',
+  sprite-layout(horizontal, (spacing: 5px, alignment: bottom)),
+  'images/cats/*'
+);
+
+// @debug $cat-sprite-map;
+
+// calling sprite-background generates the sprite map image
+%cat-bg {
+  @include sprite-background($cat-sprite-map);
+}
+
+@each $cat in sprite-list($cat-sprite-map) {
+  // @debug sprite-identifier($cat-sprite-map, $cat);
+  .cat-#{sprite-identifier($cat-sprite-map, $cat)} {
+    @extend %cat-bg;
+    @include sprite-position($cat-sprite-map, $cat);
+    @include sprite-dimensions($cat-sprite-map, $cat);
+    // background-color: #ADD8E6;
+  }
+}
+
+
+// metro-icon sprites
+$metro-icon-sprite-map: sprite-map('metro-icon-sprite-map',
+  sprite-layout(vertical, (spacing: 50px, alignment: left)),
+  'images/dakirby309.deviantart.com-metro-light-icons/*'
+);
+
+// @debug $metro-icon-sprite-map;
+
+// calling sprite-background generates the sprite map image
+%metro-icon-bg {
+  @include sprite-background($metro-icon-sprite-map);
+}
+
+@each $metro-icon in sprite-list($metro-icon-sprite-map) {
+  // @debug sprite-identifier($metro-icon-sprite-map, $metro-icon);
+  .metro-icon-#{sprite-identifier($metro-icon-sprite-map, $metro-icon)} {
+    @extend %metro-icon-bg;
+    @include sprite-position($metro-icon-sprite-map, $metro-icon);
+    @include sprite-dimensions($metro-icon-sprite-map, $metro-icon);
+    // background-color: #ADD8E6;
+  }
+}

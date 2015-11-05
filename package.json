@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "node-sass": "*",
+    "eyeglass": "*",
+    "eyeglass-spriting": "*",
+    "fs-extra": "*",
+    "v8-profiler": "*"
+  },
+  "dependencies": {
+    "node-static": "^0.7.6"
+  }
+}
