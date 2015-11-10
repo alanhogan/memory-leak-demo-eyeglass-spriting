@@ -42,7 +42,7 @@ $metro-icon-sprite-map: sprite-map('metro-icon-sprite-map',
 // broccoli-sass with node-sass 3.3.3 complains about a bad selector after ".3" on the following line
 // (using build.js does the same, but you  must use node-sass 3.3, not 3.4)
 @each $metro-icon in sprite-list($metro-icon-sprite-map) {
-  
+
   // The error really happens here, though:
   .metro-icon-#{sprite-identifier($metro-icon-sprite-map, $metro-icon)} {
     @extend %metro-icon-bg;
