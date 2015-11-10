@@ -1,10 +1,13 @@
 {
+  "private": true,
   "devDependencies": {
-    "node-sass": "*",
+    "node-sass": "3.3.3",
     "eyeglass": "*",
     "eyeglass-spriting": "*",
     "fs-extra": "*",
-    "v8-profiler": "*"
+    "v8-profiler": "*",
+    "broccoli-eyeglass": "*",
+    "broccoli": "*"
   },
   "dependencies": {
     "node-static": "^0.7.6"
